@@ -1,0 +1,20 @@
+<div>
+  <button mat-button routerLink="/rxjs-main" color="accent">
+    BACK
+  </button>
+</div>
+<strong>empty</strong>
+<div>
+  <p>
+    Creates an Observable that emits no items to the Observer and immediately
+    emits a complete notification.
+  </p>
+  <a href="https://rxjs-dev.firebaseapp.com/api/index/function/empty#empty"
+    >empty</a
+  >
+  <div>
+    <ng-container *ngFor="let detail of emptyDetails; let i = index">
+      {{ i + 1 }} . {{ detail }} <br />
+    </ng-container>
+  </div>
+</div>

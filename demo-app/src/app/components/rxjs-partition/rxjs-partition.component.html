@@ -1,0 +1,20 @@
+<div>
+  <button mat-button routerLink="/rxjs-main" color="accent">
+    BACK
+  </button>
+</div>
+<strong>partition</strong>
+<div>
+  <p>
+    Splits the source Observable into two, one with values that satisfy a
+    predicate, and another with values that don't satisfy the predicate.
+  </p>
+  <a href="https://rxjs-dev.firebaseapp.com/api/index/function/partition"
+    >partition</a
+  >
+  <div>
+    <ng-container *ngFor="let detail of oddPartitionDetails; let i = index">
+      {{ i + 1 }} . {{ detail.title }} <br />
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="30px">
+  <ng-container *ngFor="let data of rxjsTitleList">
+    <div class="padding" fxFlex="26" fxFlex.xs="100">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>RxJs {{ data.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+          {{ data.title }}
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+          <button mat-button routerLink="{{ data.link }}" class="button-style">
+            START
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-container>
+</div>

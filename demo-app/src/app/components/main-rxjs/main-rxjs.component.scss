@@ -1,0 +1,23 @@
+.example-card {
+  height: 165px;
+}
+
+.padding {
+  padding: 10px 0px !important;
+}
+
+mat-card-header {
+  padding-top: 19px;
+  height: 34px;
+  justify-content: center;
+  background-color: #4abfaf;
+  color: white;
+}
+
+mat-card-content {
+  height: 42px;
+}
+
+.button-style {
+  color: #63b79b;
+}

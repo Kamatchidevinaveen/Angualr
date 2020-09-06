@@ -1,0 +1,164 @@
+<mat-card class="container">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Custom Toolbar</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-card-content class="padding">
+    <perfect-scrollbar class="scrollbar-container">
+      <form [formGroup]="personalDetailsFormGroup">
+        <div fxLayout="column">
+          <div fxLayout="row" fxFlex="100" fxLayoutGap="30px">
+            <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-md="100">
+              <mat-label>First Name</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="firstName"
+                required
+              />
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-md="100">
+              <mat-label>Last Name</mat-label>
+              <input matInput type="text" formControlName="lastName" />
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxFlex="100" fxLayoutGap="30px">
+            <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-md="100">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="email" required />
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-md="100">
+              <mat-label>Gender</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="male">Male</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxFlex="100">
+            <mat-form-field appearance="outline" fxFlex="50">
+              <mat-label>Date Of Birth</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="dob"
+                required
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxFlex="100" fxLayoutGap="30px">
+            <mat-form-field
+              appearance="outline"
+              fxFlex="100"
+              fxFlex.lt-md="100"
+            >
+              <mat-label>Comments</mat-label>
+              <textarea matInput formControlName="comments"></textarea>
+            </mat-form-field>
+          </div>
+
+          <h3>Address</h3>
+          <div formGroupName="address" fxLayout="column">
+            <div fxLayout="row" fxFlex="100" fxLayoutGap="30px">
+              <mat-form-field
+                appearance="outline"
+                fxFlex="50"
+                fxFlex.lt-md="100"
+              >
+                <mat-label>Street</mat-label>
+                <input matInput type="type" formControlName="street" required />
+                <mat-icon matSuffix> streetview</mat-icon>
+              </mat-form-field>
+              <mat-form-field
+                appearance="outline"
+                fxFlex="50"
+                fxFlex.lt-md="100"
+              >
+                <mat-label>City</mat-label>
+                <input matInput type="type" formControlName="city" required />
+                <mat-icon matSuffix>location_city</mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxFlex="100" fxLayoutGap="30px">
+              <mat-form-field
+                appearance="outline"
+                fxFlex="50"
+                fxFlex.lt-md="100"
+              >
+                <mat-label>State</mat-label>
+                <input matInput type="type" formControlName="state" required />
+                <mat-icon matSuffix>domain</mat-icon>
+              </mat-form-field>
+              <mat-form-field
+                appearance="outline"
+                fxFlex="50"
+                fxFlex.lt-md="100"
+              >
+                <mat-label>Zip</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="zip"
+                  minlength="6"
+                  maxlength="6"
+                  required
+                />
+                <mat-icon matSuffix>dialpad</mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxFlex="100" fxLayoutGap="30px">
+              <mat-form-field
+                appearance="outline"
+                fxFlex="50"
+                fxFlex.lt-md="100"
+              >
+                <mat-label>Phone Number</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="phoneNumber"
+                  min="10"
+                  max="10"
+                  required
+                />
+                <mat-icon matSuffix>phone</mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+    </perfect-scrollbar>
+  </mat-card-content>
+  <mat-card-actions
+    class="action-style"
+    fxLayout="row"
+    fxLayoutAlign="end center"
+  >
+    <button mat-raised-button color="primary" (click)="onCancel()">
+      CANCEL
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="personalDetailsFormGroup.invalid"
+      (click)="onSave()"
+    >
+      SAVE
+    </button>
+  </mat-card-actions>
+</mat-card>

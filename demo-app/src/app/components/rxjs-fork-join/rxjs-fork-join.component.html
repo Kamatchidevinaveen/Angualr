@@ -1,0 +1,22 @@
+<div>
+  <button mat-button routerLink="/rxjs-main" color="accent">
+    BACK
+  </button>
+</div>
+<strong>forkJoin</strong>
+<div>
+  <p>
+    Accepts an Array of ObservableInput or a dictionary Object of
+    ObservableInput and returns an Observable that emits either an array of
+    values in the exact same order as the passed array, or a dictionary of
+    values in the same shape as the passed dictionary.
+  </p>
+  <a href="https://rxjs-dev.firebaseapp.com/api/index/function/concat"
+    >forkJoin</a
+  >
+  <div>
+    <ng-container *ngFor="let detail of forkJoinDetails; let i = index">
+      {{ i + 1 }} . {{ detail.length }} <br />
+    </ng-container>
+  </div>
+</div>

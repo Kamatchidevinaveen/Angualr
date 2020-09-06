@@ -1,0 +1,19 @@
+<div>
+  <button mat-button routerLink="/rxjs-main" color="accent">
+    BACK
+  </button>
+</div>
+<strong>concat</strong>
+<div>
+  <p>
+    Projects each source value to an Observable which is merged in the output
+    Observable, in a serialized fashion waiting for each one to complete before
+    merging the next.
+  </p>
+  <a href="https://rxjs-dev.firebaseapp.com/api/operators/concatMap">concat</a>
+  <div>
+    <ng-container *ngFor="let detail of concatDetails; let i = index">
+      {{ i + 1 }} . {{ detail.title }} <br />
+    </ng-container>
+  </div>
+</div>

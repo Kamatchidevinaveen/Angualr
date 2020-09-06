@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Demo</span>
+    <span>
+      <button
+        mat-icon-button
+        class="button"
+        [ngClass]="{ 'button-padding': sidenav.opened }"
+      >
+        <mat-icon matTooltip="Menu" (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" #sidenav opened
+    ><app-side-menu></app-side-menu
+  ></mat-sidenav>
+  <mat-sidenav-content class="padding"
+    ><router-outlet></router-outlet
+  ></mat-sidenav-content>
+</mat-sidenav-container>

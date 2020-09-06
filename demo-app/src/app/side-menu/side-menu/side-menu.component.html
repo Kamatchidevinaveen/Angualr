@@ -1,0 +1,20 @@
+<mat-nav-list role="navigation">
+  <mat-list-item *ngFor="let side of sideMenuList">
+    <ng-container>
+      <a
+        [routerLink]="[side.link]"
+        [routerLinkActive]="['active']"
+        mat-list-item
+      >
+        <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+      </a>
+
+      <ng-template #itemContent>
+        <!-- <mat-icon mat-list-icon class="nav-link-icon mr-8" *ngIf="item.icon">{{
+          item.icon
+        }}</mat-icon> -->
+        <span matLine class="nav-link-title">{{ side.displayName }}</span>
+      </ng-template>
+    </ng-container>
+  </mat-list-item>
+</mat-nav-list>
