@@ -6,6 +6,8 @@
   />
 </mat-form-field>
 
+<div class="mat-elevation-z8">
+  <perfect-scrollbar class="scrollbar-container">
 <form [formGroup]="form" autocomplete="off">
   <mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="select">
@@ -85,6 +87,8 @@
     showFirstLastButtons
   ></mat-paginator>
 </form>
+</perfect-scrollbar>
+</div>
 <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>

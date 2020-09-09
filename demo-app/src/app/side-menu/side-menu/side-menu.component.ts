@@ -34,13 +34,8 @@ export class SideMenuComponent implements OnInit {
     // },
     {
       name: 'dataTable',
-      displayName: 'Data Table',
-      link: '/data-table',
-    },
-    {
-      name: 'inlineEdit',
-      displayName: 'Inline Edit',
-      link: '/inline-edit-table',
+      displayName: 'Data Tables',
+      link: '/main-table',
     },
     {
       name: 'rxjs',
@@ -48,9 +43,9 @@ export class SideMenuComponent implements OnInit {
       link: '/rxjs-main',
     },
     {
-      name: 'formArrayTable',
-      displayName: 'Form Array Table',
-      link: '/form-array-table',
+      name: 'expansion-panel',
+      displayName: 'Expansion Panel',
+      link: '/expansion-panel',
     },
   ];
 

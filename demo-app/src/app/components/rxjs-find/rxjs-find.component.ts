@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { of } from 'rxjs';
-import { find } from 'rxjs/operators';
+import { of, Observable } from 'rxjs';
+import { find, map } from 'rxjs/operators';
 
 import { CommonServiceService } from './../../services/common-service.service';
 
@@ -13,9 +13,8 @@ import { CommonServiceService } from './../../services/common-service.service';
 export class RxjsFindComponent implements OnInit {
   /** variable declarations */
 
-  private details: any;
+  private details$: Observable<any>;
 
-  public of_details_1: any;
   public findDetails: any;
 
   /** constructor class */
@@ -25,9 +24,10 @@ export class RxjsFindComponent implements OnInit {
 
   private getDetails() {
     this.commonService.getDetails().subscribe((result) => {
-      this.details = result;
-      this.of_details_1 = this.details.find((d) => d.userId === 1);
-      console.log(this.of_details_1);
+      this.details$ = of(result);
+      this.details$.pipe(map(items => items.find((d) => d.userId === 1))).subscribe((result) => {
+        this.findDetails = result;
+      });
     });
   }
 

@@ -22,6 +22,8 @@ import { RxjsCancotMapComponent } from './components/rxjs-cancot-map/rxjs-cancot
 import { RxjsFindComponent } from './components/rxjs-find/rxjs-find.component';
 import { FormArrayTableComponent } from './components/form-array-table/form-array-table.component';
 import { RxjsFilterComponent } from './components/rxjs-filter/rxjs-filter.component';
+import { MainTableComponent } from './components/main-table/main-table.component';
+import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 
 const routes: Routes = [
   {
@@ -35,14 +37,6 @@ const routes: Routes = [
   {
     path: 'form',
     component: FormsComponent,
-  },
-  {
-    path: 'data-table',
-    component: DataTableComponent,
-  },
-  {
-    path: 'inline-edit-table',
-    component: InlineEditTableComponent,
   },
   {
     path: 'rxjs',
@@ -101,12 +95,16 @@ const routes: Routes = [
     component: RxjsFindComponent,
   },
   {
-    path: 'form-array-table',
-    component: FormArrayTableComponent,
-  },
-  {
     path: 'rxjs-filter',
     component: RxjsFilterComponent,
+  },
+  {
+    path: 'main-table',
+    component: MainTableComponent,
+  },
+  {
+    path: 'expansion-panel',
+    component: ExpansionPanelComponent,
   },
 ];
 

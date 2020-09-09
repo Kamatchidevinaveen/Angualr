@@ -10,10 +10,26 @@
         <mat-icon matTooltip="Menu" (click)="sidenav.toggle()">menu</mat-icon>
       </button>
     </span>
+    <span class="spacer"></span>
+    <span>
+      <button *ngIf="isLargeDevice" mat-button [matMenuTriggerFor]="menu">
+        Menu
+      </button>
+      <button mat-icon-button *ngIf="isDeviceXs" [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    </span>
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav mode="side" #sidenav opened
+<mat-sidenav-container autosize>
+  <mat-sidenav
+    [mode]="isDeviceXs ? 'over' : 'side'"
+    #sidenav
+    [opened]="isLargeDevice"
     ><app-side-menu></app-side-menu
   ></mat-sidenav>
   <mat-sidenav-content class="padding"

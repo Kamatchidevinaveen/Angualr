@@ -28,6 +28,10 @@ import { RxjsCancotMapComponent } from './components/rxjs-cancot-map/rxjs-cancot
 import { RxjsFindComponent } from './components/rxjs-find/rxjs-find.component';
 import { FormArrayTableComponent } from './components/form-array-table/form-array-table.component';
 import { RxjsFilterComponent } from './components/rxjs-filter/rxjs-filter.component';
+import { MainTableComponent } from './components/main-table/main-table.component';
+import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
+import { SharedDialogComponent } from './components/shared-dialog/shared-dialog.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,10 @@ import { RxjsFilterComponent } from './components/rxjs-filter/rxjs-filter.compon
     RxjsFindComponent,
     FormArrayTableComponent,
     RxjsFilterComponent,
+    MainTableComponent,
+    SharedDialogComponent,
+    ExpansionPanelComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,5 +70,6 @@ import { RxjsFilterComponent } from './components/rxjs-filter/rxjs-filter.compon
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [DialogComponent],
 })
 export class AppModule {}
