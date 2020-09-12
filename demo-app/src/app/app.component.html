@@ -12,6 +12,14 @@
     </span>
     <span class="spacer"></span>
     <span>
+      <app-theme-menu
+        [options]="options"
+        [theme]="selectedTheme"
+        (themeChange)="themeChangeHandler($event)"
+      >
+      </app-theme-menu>
+    </span>
+    <span>
       <button *ngIf="isLargeDevice" mat-button [matMenuTriggerFor]="menu">
         Menu
       </button>

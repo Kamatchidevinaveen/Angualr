@@ -32,6 +32,8 @@ import { MainTableComponent } from './components/main-table/main-table.component
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { SharedDialogComponent } from './components/shared-dialog/shared-dialog.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { ThemeMenuComponent } from './components/theme-menu/theme-menu.component';
+import { StepperComponent } from './components/stepper/stepper.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     SharedDialogComponent,
     ExpansionPanelComponent,
     DialogComponent,
+    ThemeMenuComponent,
+    StepperComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <mat-accordion>
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
-      <mat-panel-title> This is the expansion title </mat-panel-title>
+      <mat-panel-title> Ng-content Example </mat-panel-title>
       <mat-panel-description>
         This is a summary of the content
       </mat-panel-description>
@@ -26,11 +26,20 @@
     (closed)="panelOpenState = false"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title> Self aware panel </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{ panelOpenState ? "open" : "closed" }}
-      </mat-panel-description>
+      <mat-panel-title> Chips </mat-panel-title>
+      <mat-panel-description> Dragable chips </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
+    <mat-chip-list
+      class="example-chip"
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <ng-template ngFor let-vegetable [ngForOf]="vegetables">
+        <mat-chip color="primary" class="example-box" cdkDrag selected>
+          {{ vegetable.name }}
+        </mat-chip>
+      </ng-template>
+    </mat-chip-list>
   </mat-expansion-panel>
 </mat-accordion>

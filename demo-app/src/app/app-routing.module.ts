@@ -24,6 +24,7 @@ import { FormArrayTableComponent } from './components/form-array-table/form-arra
 import { RxjsFilterComponent } from './components/rxjs-filter/rxjs-filter.component';
 import { MainTableComponent } from './components/main-table/main-table.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
+import { StepperComponent } from './components/stepper/stepper.component';
 
 const routes: Routes = [
   {
@@ -105,6 +106,10 @@ const routes: Routes = [
   {
     path: 'expansion-panel',
     component: ExpansionPanelComponent,
+  },
+  {
+    path: 'stepper',
+    component: StepperComponent,
   },
 ];
 

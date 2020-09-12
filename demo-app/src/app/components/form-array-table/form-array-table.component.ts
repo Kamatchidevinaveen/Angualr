@@ -22,23 +22,24 @@ export class FormArrayTableComponent implements OnInit {
   public selection = new SelectionModel<Element>(true, []);
 
   constructor(
-    private _albumService: CommonServiceService,
-    private _formBuilder: FormBuilder
+    private albumService: CommonServiceService,
+    private formBuilder: FormBuilder
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     // this.dataSource.paginator = this.paginator;
-    this.form = this._formBuilder.group({
-      albums: this._formBuilder.array([]),
+    this.form = this.formBuilder.group({
+      albums: this.formBuilder.array([]),
     });
-    this._albumService.getAllAsFormArray().subscribe((albums) => {
+    this.albumService.getAllAsFormArray().subscribe((albums) => {
       this.form.setControl('albums', albums);
       this.dataSource = new MatTableDataSource(
         (this.form.get('albums') as FormArray).controls
       );
       this.dataSource.filterPredicate = (data: FormGroup, filter: string) => {
-        return Object.values(data.controls).some((x) => x.value == filter);
+        return Object.values(data.controls).some((x) => x.value === filter);
       };
+      this.dataSource.paginator.length = this.dataSource.data.length;
     });
   }
 
@@ -55,29 +56,29 @@ export class FormArrayTableComponent implements OnInit {
   //   // Notice the ngIf at the title cell definition. The user with id 3 can't set the title of the albums
   // }
 
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
-  public isAllSelected() {
+  public isAllSelected(): any {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
     return numSelected === numRows;
   }
 
   /** Selects all rows if they are not all selected; otherwise clear selection. */
-  public masterToggle() {
+  public masterToggle(): void {
     this.isAllSelected()
       ? this.selection.clear()
       : this.dataSource.data.forEach((row) => this.selection.select(row));
   }
 
-  public onSelectionOfCheckbox(data) {
+  public onSelectionOfCheckbox(data): void {
     const index = this.dataSource.data.findIndex(
       (r) => r.value.id === data.value.id
     );
-    this.dataSource.data[index]['isEdit'] = true;
+    this.dataSource.data[index].isEdit = true;
     console.log(this.dataSource.data);
     this.selectionArray.push(data);
     console.log(data);

@@ -13,28 +13,8 @@ export class SideMenuComponent implements OnInit {
       link: '/form',
     },
     {
-      name: 'navigation',
-      displayName: 'Navigation',
-      link: '/form-control',
-    },
-    // {
-    //   name: 'layout',
-    //   displayName: 'Layout',
-    //   link: '',
-    // },
-    // {
-    //   name: 'buttonsAndIndicators',
-    //   displayName: 'Buttons And Indicators',
-    //   link: '',
-    // },
-    // {
-    //   name: 'popupAndModels',
-    //   displayName: 'Popup And Models',
-    //   link: '',
-    // },
-    {
       name: 'dataTable',
-      displayName: 'Data Tables',
+      displayName: 'Type Of Data-Tables',
       link: '/main-table',
     },
     {
@@ -46,6 +26,11 @@ export class SideMenuComponent implements OnInit {
       name: 'expansion-panel',
       displayName: 'Expansion Panel',
       link: '/expansion-panel',
+    },
+    {
+      name: 'stepper',
+      displayName: 'Stepper',
+      link: '/stepper',
     },
   ];
 

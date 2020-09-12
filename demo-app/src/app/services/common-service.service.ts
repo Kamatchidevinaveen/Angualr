@@ -12,21 +12,25 @@ import { Album } from '../models/album.model';
 })
 export class CommonServiceService {
   url = 'https://jsonplaceholder.typicode.com/albums';
-  url_1 = 'https://jsonplaceholder.typicode.com/posts';
+  url1 = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: HttpClient) {}
+
+  getThemeOPtions(): Observable<any> {
+    return this.http.get('../assets/options.json');
+  }
 
   getDetails(): Observable<any> {
     return this.http.get(this.url);
   }
 
   getPostDetails(): Observable<any> {
-    return this.http.get(this.url_1);
+    return this.http.get(this.url1);
   }
 
   getAllUser(): Observable<any> {
-    const url_1 = 'https://jsonplaceholder.typicode.com/users';
-    return this.http.get(url_1);
+    const url1 = 'https://jsonplaceholder.typicode.com/users';
+    return this.http.get(url1);
   }
 
   getAllAsFormArray(): Observable<FormArray> {
