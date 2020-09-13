@@ -1,4 +1,3 @@
-import { CommonServiceService } from './../../services/common-service.service';
 import { Component, OnInit } from '@angular/core';
 
 import { empty, interval, of } from 'rxjs';

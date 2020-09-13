@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { of, concat } from 'rxjs';
 
-import { CommonServiceService } from './../../services/common-service.service';
+import { CommonServiceService } from '../../../services/common-service.service';
 
 @Component({
   selector: 'app-rxjs-concat',
@@ -23,7 +23,7 @@ export class RxjsConcatComponent implements OnInit {
 
   /** private methods */
 
-  private getDetails() {
+  private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
       this.details = result;
       this.of_details_1 = this.details;
@@ -31,7 +31,7 @@ export class RxjsConcatComponent implements OnInit {
     });
   }
 
-  private getPostDetails() {
+  private getPostDetails(): void {
     this.commonService.getPostDetails().subscribe((result) => {
       this.of_details_2 = result;
       this.concatDetails = this.of_details_1.concat(this.of_details_2);

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 
-import { CommonServiceService } from './../../services/common-service.service';
+import { CommonServiceService } from '../../../services/common-service.service';
 
 @Component({
   selector: 'app-rxjs-cancot-map',
@@ -24,7 +24,7 @@ export class RxjsCancotMapComponent implements OnInit {
 
   /** private methods */
 
-  private getDetails() {
+  private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
       this.details = result;
       this.of_details_1 = of(this.details);
@@ -32,14 +32,14 @@ export class RxjsCancotMapComponent implements OnInit {
     });
   }
 
-  private getPostDetails() {
+  private getPostDetails(): void {
     this.commonService.getPostDetails().subscribe((result) => {
       this.of_details_2 = of(result);
       this.populateConcatDetails();
     });
   }
 
-  private populateConcatDetails() {
+  private populateConcatDetails(): void {
     if (this.of_details_1 && this.of_details_2) {
       this.concatDetails = concatMap(this.of_details_1, this.of_details_2);
       console.log(this.concatDetails);

@@ -20,7 +20,7 @@ export class SideMenuComponent implements OnInit {
     {
       name: 'rxjs',
       displayName: 'RxJS',
-      link: '/rxjs-main',
+      link: '/rxjs/main',
     },
     {
       name: 'expansion-panel',

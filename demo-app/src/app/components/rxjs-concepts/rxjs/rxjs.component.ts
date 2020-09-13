@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { of } from 'rxjs';
 
-import { CommonServiceService } from './../../services/common-service.service';
+import { CommonServiceService } from '../../../services/common-service.service';
 
 @Component({
   selector: 'app-rxjs',

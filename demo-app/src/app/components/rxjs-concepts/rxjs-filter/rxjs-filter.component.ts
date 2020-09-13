@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { filter, map } from 'rxjs/operators';
-
-import { CommonServiceService } from './../../services/common-service.service';
 import { Observable, of } from 'rxjs';
+
+import { CommonServiceService } from '../../../services/common-service.service';
 
 @Component({
   selector: 'app-rxjs-filter',
@@ -23,12 +23,14 @@ export class RxjsFilterComponent implements OnInit {
 
   /** private methods */
 
-  private getDetails() {
+  private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
       this.ob$ = of(result);
-      this.ob$.pipe( map (items => items.filter((r) => r.userId === 1))).subscribe((result) => {
-        this.filterDetails = result;
-      });
+      this.ob$
+        .pipe(map((items) => items.filter((r) => r.userId === 1)))
+        .subscribe((result) => {
+          this.filterDetails = result;
+        });
     });
   }
 

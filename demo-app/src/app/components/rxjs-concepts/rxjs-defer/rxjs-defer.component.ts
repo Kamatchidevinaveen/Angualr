@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { defer, of, interval } from 'rxjs';
 
-import { CommonServiceService } from './../../services/common-service.service';
+import { CommonServiceService } from '../../../services/common-service.service';
 
 @Component({
   selector: 'app-rxjs-defer',
@@ -21,14 +21,14 @@ export class RxjsDeferComponent implements OnInit {
 
   /** private methods */
 
-  private getDetails() {
+  private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
       this.details = result;
       this.populateOfData();
     });
   }
 
-  private populateOfData() {
+  private populateOfData(): any {
     return Math.random() > 0.5
       ? of(this.details).subscribe((data) => {
           this.defer_details = data;

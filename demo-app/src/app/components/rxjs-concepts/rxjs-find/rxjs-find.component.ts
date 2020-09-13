@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { find, map } from 'rxjs/operators';
 
-import { CommonServiceService } from './../../services/common-service.service';
+import { CommonServiceService } from '../../../services/common-service.service';
 
 @Component({
   selector: 'app-rxjs-find',
@@ -22,12 +22,14 @@ export class RxjsFindComponent implements OnInit {
 
   /** private methods */
 
-  private getDetails() {
+  private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
       this.details$ = of(result);
-      this.details$.pipe(map(items => items.find((d) => d.userId === 1))).subscribe((result) => {
-        this.findDetails = result;
-      });
+      this.details$
+        .pipe(map((items) => items.find((d) => d.userId === 1)))
+        .subscribe((res: any) => {
+          this.findDetails = res;
+        });
     });
   }
 
