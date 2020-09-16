@@ -111,6 +111,46 @@
           }
         }
       }
+    },
+    "ngrx": {
+      "projectType": "library",
+      "root": "projects/ngrx",
+      "sourceRoot": "projects/ngrx/src",
+      "prefix": "demo-app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngrx/tsconfig.lib.json",
+            "project": "projects/ngrx/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngrx/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngrx/src/test.ts",
+            "tsConfig": "projects/ngrx/tsconfig.spec.json",
+            "karmaConfig": "projects/ngrx/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngrx/tsconfig.lib.json",
+              "projects/ngrx/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "demo-app",

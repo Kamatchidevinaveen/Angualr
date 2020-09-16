@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { LazyNgrxModule } from './lazy-loading/ngrx.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -43,6 +45,7 @@ import { RxjsConceptsModule } from './components/rxjs-concepts/rxjs-concepts.mod
     MaterialModule,
     BrowserAnimationsModule,
     RxjsConceptsModule,
+    LazyNgrxModule,
   ],
   exports: [MaterialModule],
   providers: [],

@@ -12,6 +12,15 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngrx/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngrx/tsconfig.spec.json"
     }
-  ]
+  ],
+  "paths": {
+    "@ngrx": ["dist/ngrx"]
+  }
 }

@@ -32,6 +32,11 @@ export class SideMenuComponent implements OnInit {
       displayName: 'Stepper',
       link: '/stepper',
     },
+    {
+      name: 'ngrx',
+      displayName: 'NgRx',
+      link: '/ngrx/main',
+    },
   ];
 
   constructor() {}
