@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { of, concat } from 'rxjs';
+import { from, concat, Observable } from 'rxjs';
 
 import { CommonServiceService } from '../../../services/common-service.service';
 
@@ -13,10 +13,10 @@ export class RxjsConcatComponent implements OnInit {
   /** variable declarations */
 
   private details: any;
+ private of_details_1$: Observable<any>;
+  private of_details_2$: Observable<any>;
 
-  public of_details_1: any;
-  public of_details_2: any;
-  public concatDetails: any;
+  public concatDetails: any[] = [];
 
   /** constructor class */
   constructor(private commonService: CommonServiceService) {}
@@ -25,16 +25,17 @@ export class RxjsConcatComponent implements OnInit {
 
   private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
-      this.details = result;
-      this.of_details_1 = this.details;
+      this.of_details_1$ = from(result);
       this.getPostDetails();
     });
   }
 
   private getPostDetails(): void {
     this.commonService.getPostDetails().subscribe((result) => {
-      this.of_details_2 = result;
-      this.concatDetails = this.of_details_1.concat(this.of_details_2);
+      this.of_details_2$ = from(result);
+      concat(this.of_details_2$, this.of_details_1$).subscribe((res) => {
+        this.concatDetails.push(res);
+      });
       // this.of_details_1.pipe(concat(this.of_details_2)).subscribe((r) => {
       //   this.concatDetails = r;
       // });

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { of } from 'rxjs';
-import { concatMap } from 'rxjs/operators';
+import { from, interval, of, Subscription } from 'rxjs';
+import { concatMap, take } from 'rxjs/operators';
 
 import { CommonServiceService } from '../../../services/common-service.service';
 
@@ -27,25 +27,15 @@ export class RxjsCancotMapComponent implements OnInit {
   private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
       this.details = result;
-      this.of_details_1 = of(this.details);
-      this.populateConcatDetails();
-    });
-  }
-
-  private getPostDetails(): void {
-    this.commonService.getPostDetails().subscribe((result) => {
-      this.of_details_2 = of(result);
+      this.of_details_1 = from(this.details);
       this.populateConcatDetails();
     });
   }
 
   private populateConcatDetails(): void {
-    if (this.of_details_1 && this.of_details_2) {
-      this.concatDetails = concatMap(this.of_details_1, this.of_details_2);
+    if (this.of_details_1) {
+      this.concatDetails = this.of_details_1.pipe(concatMap(ev => interval(1000).pipe(take(4))));
       console.log(this.concatDetails);
-      // .subscribe((r) => {
-      //   this.concatDetails = r;
-      // });
     }
   }
 
@@ -53,6 +43,5 @@ export class RxjsCancotMapComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDetails();
-    this.getPostDetails();
   }
 }

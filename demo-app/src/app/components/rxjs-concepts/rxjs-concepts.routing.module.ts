@@ -16,6 +16,25 @@ import { RxjsForkJoinComponent } from '../rxjs-concepts/rxjs-fork-join/rxjs-fork
 import { RxjsCancotMapComponent } from '../rxjs-concepts/rxjs-cancot-map/rxjs-cancot-map.component';
 import { RxjsFindComponent } from '../rxjs-concepts/rxjs-find/rxjs-find.component';
 import { RxjsFilterComponent } from '../rxjs-concepts/rxjs-filter/rxjs-filter.component';
+import { RxjsEveryComponent } from '../rxjs-concepts/rxjs-every/rxjs-every.component';
+import { RxjsFindIndexComponent } from '../rxjs-concepts/rxjs-find-index/rxjs-find-index.component';
+import { CombineLatestComponent } from '../rxjs-concepts/combine-latest/combine-latest.component';
+import { MergeComponent } from '../rxjs-concepts/merge/merge.component';
+import { BufferTimeComponent } from '../rxjs-concepts/buffer-time/buffer-time.component';
+import { CatchErrorComponent } from './catch-error/catch-error.component';
+import { DebounceTimeComponent } from './debounce-time/debounce-time.component';
+import { DistinctUntilChangedComponent } from './distinct-until-changed/distinct-until-changed.component';
+import { DoComponent } from './do/do.component';
+import { MapComponent } from './map/map.component';
+import { ScanComponent } from './scan/scan.component';
+import { ShareComponent } from './share/share.component';
+import { ShareReplayComponent } from './share-replay/share-replay.component';
+import { StartWithComponent } from './start-with/start-with.component';
+import { SwitchMapComponent } from './switch-map/switch-map.component';
+import { TakeComponent } from './take/take.component';
+import { TakeUntilComponent } from './take-until/take-until.component';
+import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
+import { MergeMapComponent } from '../rxjs-concepts/merge-map/merge-map.component';
 
 const routes: Routes = [
   {
@@ -78,6 +97,82 @@ const routes: Routes = [
     path: 'rxjs/filter',
     component: RxjsFilterComponent,
   },
+  {
+    path: 'rxjs/every',
+    component: RxjsEveryComponent,
+  },
+  {
+    path: 'rxjs/findIndex',
+    component: RxjsFindIndexComponent,
+  },
+  {
+    path: 'rxjs/combineLatest',
+    component: CombineLatestComponent
+  },
+  {
+    path: 'rxjs/merge',
+    component: MergeComponent
+  },
+  {
+    path: 'rxjs/bufferTime',
+    component: BufferTimeComponent
+  },
+  {
+    path: 'rxjs/catchError',
+    component: CatchErrorComponent
+  },
+  {
+    path: 'rxjs/debounceTime',
+    component: DebounceTimeComponent
+  },
+  {
+    path: 'rxjs/distinctUntilChanged',
+    component: DistinctUntilChangedComponent
+  },
+  {
+    path: 'rxjs/do',
+    component: DoComponent
+  },
+  {
+    path: 'rxjs/map',
+    component: MapComponent
+  },
+  {
+    path: 'rxjs/scan',
+    component: ScanComponent
+  },
+  {
+    path: 'rxjs/share',
+    component: ShareComponent
+  },
+  {
+    path: 'rxjs/shareReplay',
+    component: ShareReplayComponent
+  },
+  {
+    path: 'rxjs/startWith',
+    component: StartWithComponent
+  },
+  {
+    path: 'rxjs/switchMap',
+    component: SwitchMapComponent
+  },
+  {
+    path: 'rxjs/take',
+    component: TakeComponent
+  },
+  {
+    path: 'rxjs/takeUntil',
+    component: TakeUntilComponent
+  },
+  {
+    path: 'rxjs/withLatestFrom',
+    component: WithLatestFromComponent
+  },
+  {
+    path: 'rxjs/mergeMap',
+    component: MergeMapComponent
+  }
 ];
 
 @NgModule({

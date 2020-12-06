@@ -1,0 +1,13 @@
+<div>
+    <button mat-button routerLink="/rxjs/main" color="accent">BACK</button>
+</div>
+<strong>debounceTime</strong>
+<div>
+    <p>
+        Emits a value from the source Observable only after a particular time span has passed without another source emission.
+    </p>
+    <a href="https://www.learnrxjs.io/learn-rxjs/operators/filtering/debouncetime">debounceTime</a>
+    <ng-container *ngFor="let detail of details; let i = index">
+        <div>{{ i + 1 }} {{ detail.title }} <br /></div>
+    </ng-container>
+</div>

@@ -1,0 +1,13 @@
+<div>
+    <button mat-button routerLink="/rxjs/main" color="accent">BACK</button>
+</div>
+<strong>bufferTime</strong>
+<div>
+    <p>
+        Buffers the source Observable values for a specific time period.
+    </p>
+    <a href="https://rxjs-dev.firebaseapp.com/api/operators/bufferTime">bufferTime</a>
+    <ng-container *ngFor="let detail of details; let i = index">
+        <div>{{ i + 1 }} {{ detail.title }} <br /></div>
+    </ng-container>
+</div>

@@ -16,19 +16,9 @@ export class MainRxjsComponent implements OnInit {
       link: '/rxjs/of',
     },
     {
-      id: 2,
-      title: 'defer',
-      link: '/rxjs/defer',
-    },
-    {
       id: 12,
       title: 'concat',
       link: '/rxjs/concat',
-    },
-    {
-      id: 13,
-      title: 'partition',
-      link: '/rxjs/partition',
     },
     {
       id: 14,
@@ -39,21 +29,6 @@ export class MainRxjsComponent implements OnInit {
       id: 15,
       title: 'concatMap',
       link: '/rxjs/concat-map',
-    },
-    {
-      id: 3,
-      title: 'empty',
-      link: '/rxjs/empty',
-    },
-    {
-      id: 4,
-      title: 'generate',
-      link: '/rxjs/generate',
-    },
-    {
-      id: 5,
-      title: 'iif',
-      link: '/rxjs/iif',
     },
     {
       id: 6,
@@ -83,8 +58,98 @@ export class MainRxjsComponent implements OnInit {
     {
       id: 11,
       title: 'findIndex',
-      link: '',
+      link: '/rxjs/findIndex',
     },
+    {
+      id: 12,
+      title: 'every',
+      link: '/rxjs/every'
+    },
+    {
+      id: 16,
+      title: 'combineLatest',
+      link: '/rxjs/combineLatest'
+    },
+    {
+      id: 17,
+      title: 'merge',
+      link: '/rxjs/merge'
+    },
+    {
+      id: 18,
+      title: 'bufferTime',
+      link: '/rxjs/bufferTime'
+    },
+    {
+      id: 19,
+      title: 'catchError',
+      link: '/rxjs/catchError'
+    },
+    {
+      id: 20,
+      title: 'debounceTime',
+      link: '/rxjs/debounceTime'
+    },
+    {
+      id: 21,
+      title: 'distinceUntilChanged',
+      link: '/rxjs/distinceUntilChanged'
+    },
+    {
+      id: 22,
+      title: 'do',
+      link: '/rxjs/do'
+    },
+    {
+      id: 23,
+      title: 'map',
+      link: '/rxjs/map'
+    },
+    {
+      id: 24,
+      title: 'scan',
+      link: '/rxjs/scan'
+    },
+    {
+      id: 25,
+      title: 'share',
+      link: '/rxjs/share'
+    },
+    {
+      id: 26,
+      title: 'shareReplay',
+      link: '/rxjs/shareReplay'
+    },
+    {
+      id: 27,
+      title: 'startWith',
+      link: '/rxjs/startWith'
+    },
+    {
+      id: 28,
+      title: 'switchMap',
+      link: '/rxjs/switchMap'
+    },
+    {
+      id: 29,
+      title: 'take',
+      link: '/rxjs/take'
+    },
+    {
+      id: 30,
+      title: 'takeUntil',
+      link: '/rxjs/takeUntil'
+    },
+    {
+      id: 31,
+      title: 'withLatestFrom',
+      link: '/rxjs/withLatestFrom'
+    },
+    {
+      id: 32,
+      title: 'mergeMap',
+      link: '/rxjs/mergeMap'
+    }
   ];
 
   /** constructor class */

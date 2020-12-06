@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { filter, map } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
 
 import { CommonServiceService } from '../../../services/common-service.service';
 
@@ -15,7 +15,7 @@ export class RxjsFilterComponent implements OnInit {
 
   private details: any;
 
-  public filterDetails: any;
+  public filterDetails: any[] = [];
   ob$: Observable<any>;
 
   /** constructor class */
@@ -25,12 +25,12 @@ export class RxjsFilterComponent implements OnInit {
 
   private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
-      this.ob$ = of(result);
-      this.ob$
-        .pipe(map((items) => items.filter((r) => r.userId === 1)))
-        .subscribe((result) => {
-          this.filterDetails = result;
-        });
+      this.ob$ = from(result);
+      const example = this.ob$
+        .pipe(filter(item => item.userId === 1));
+      example.subscribe((res) => {
+        this.filterDetails.push(res);
+      });
     });
   }
 

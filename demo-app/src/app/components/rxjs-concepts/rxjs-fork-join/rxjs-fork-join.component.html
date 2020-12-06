@@ -9,12 +9,13 @@
     values in the exact same order as the passed array, or a dictionary of
     values in the same shape as the passed dictionary.
   </p>
+  <p> It will join two observable and give last value of array or dictionary, but its based on order</p>
   <a href="https://rxjs-dev.firebaseapp.com/api/index/function/concat"
     >forkJoin</a
   >
   <div>
     <ng-container *ngFor="let detail of forkJoinDetails; let i = index">
-      {{ i + 1 }} . {{ detail.length }} <br />
+      {{ i + 1 }} . {{ detail.title }} <br />
     </ng-container>
   </div>
 </div>

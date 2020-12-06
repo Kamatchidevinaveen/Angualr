@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { of, forkJoin, timer } from 'rxjs';
+import { of, forkJoin, timer, from } from 'rxjs';
 
 import { CommonServiceService } from '../../../services/common-service.service';
 
@@ -25,15 +25,14 @@ export class RxjsForkJoinComponent implements OnInit {
 
   private getDetails(): void {
     this.commonService.getDetails().subscribe((result) => {
-      this.details = result;
-      this.of_details_1 = of(this.details);
+      this.of_details_1 = from(result);
       this.populateConcatDetails();
     });
   }
 
   private getPostDetails(): void {
     this.commonService.getPostDetails().subscribe((result) => {
-      this.of_details_2 = of(result);
+      this.of_details_2 = from(result);
       this.populateConcatDetails();
     });
   }
